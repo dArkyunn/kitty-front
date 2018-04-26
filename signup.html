@@ -10,6 +10,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="check.js"></script>
+
 	</head>
 	<body class="subpage">
 
@@ -31,36 +33,44 @@
 		<!-- Main -->
 			<div id="main">
 
+
 			<!-- One -->
 				<section class="wrapper style1">
 					<div class="inner">
 					<h1> Sign up </h1>
-					<form method="post" action="#">
+					<form method="post" action="registerUser.php" onsubmit="return checkform()">
 									<div class="row uniform">
 										<div class="6u 12u$(xsmall)">
-											<input type="text" name="name" id="name" value="" placeholder="Nickname" />
+											<input type="text" name="name" id="namee" onkeyup="checkpassword(); return false;" value="" placeholder="Nickname" />
+											<label for="namee" id="namecheck" class="lola"></label>
 										</div>
 										<div class="6u$ 12u$(xsmall)">
-											<input type="email" name="email" id="email" value="" placeholder="Email" />
+											<input type="email" name="email" id="email" onkeyup="checkpassword(); return false;" value="" placeholder="Email" />
+											<label for="email" id="emailcheck" class="lol"></label>
 										</div>
 										<div class="6u$ 12u$(xsmall)">
-											<input type="password" name="password" id="password" value="" placeholder="Password" />
+											<input type="password" name="password" id="password" onkeyup="checkpassword(); return false;" value="" placeholder="Password" />
+											<label for="password" id="length" class="length"></label>
 										</div>
 										<div class="6u$ 12u$(xsmall)">
-											<input type="password" name="passwordcheck" id="passwordcheck" value="" placeholder="Repeat password" />
+											<input type="password" name="passwordcheck" id="passwordcheck" onkeyup="checkpassword(); return false;" " value="" placeholder="Repeat password" />
+										        <label for="passwordcheck" id="confirmMessage" class="confirmMessage"></label>
 										</div>
+
+
+
 										<!-- Break -->
 										
 										<!-- Break -->
 
 										<!-- Break -->
 										<div class="6u 12u$(small)">
-											<input type="checkbox" id="copy" name="copy">
-											<label for="copy">I agree with the terms and conditions</label>
+											<input type="checkbox" id="copy" onclick="checkpassword();" name="copy">
+											<label id="checkcopy" for="copy">I agree with the terms and conditions</label>
 										</div>
 										<div class="6u$ 12u$(small)">
-											<input type="checkbox" id="human" name="human">
-											<label for="human">I am a human and not a robot</label>
+											<input type="checkbox" id="human" onclick="checkpassword();" name="human">
+											<label id="checkhuman" for="human">I am a human and not a robot</label>
 										</div>
 										<!-- Break -->
 										<div class="12u$">
@@ -69,9 +79,9 @@
 										<!-- Break -->
 										<div class="12u$">
 											<ul class="actions">
-												<li><input type="submit" value="Register" /></li>
+												<li><input type="submit" id="register" value="Register" /></li>
 												<li><input type="reset" value="Reset" class="alt" /></li>
-												<li>Already signed up? <a href="login.html"> Log in </a>
+												<li>Already got an account? <a href="login.html"> Log in </a>
 											</ul>
 										</div>
 									</div>
