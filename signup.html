@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="assets/js/check.js"></script>
+		<script src="assets/js/asyncrequest.js"></script>
 
 	</head>
 	<body class="subpage">
@@ -38,7 +39,7 @@
 				<section class="wrapper style1">
 					<div class="inner">
 					<h1> Sign up </h1>
-					<form method="post" action="registerUser.php" onsubmit="return checkform()">
+					<form method="post" id="regform">
 									<div class="row uniform">
 										<div class="6u 12u$(xsmall)">
 											<input type="text" name="name" id="namee" onkeyup="checkpassword(); return false;" value="" placeholder="Nickname" />
