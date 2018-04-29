@@ -10,15 +10,15 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="assets/js/checklogin.js"></script>
-		<script src="assets/js/asyncrequestlog.js"></script>
+		<script src="assets/js/checkforgot.js"></script>
+		<script src="assets/js/asyncrequestemail.js"></script>
 
 	</head>
 	<body class="subpage">
 
 		<!-- Header -->
 			<header id="header">
-				<h1><a href="#">Log in</a></h1>
+				<h1><a href="#">Reset password</a></h1>
 				<a href="#menu">Menu</a>
 			</header>
 
@@ -38,24 +38,17 @@
 			<!-- One -->
 				<section class="wrapper style1">
 					<div class="inner">
-					<h1> Log in </h1>
-					<form method="post" id="logform">
+					<h1> Reset password </h1>
+					<form method="post" id="forgotform">
 									<div class="row uniform">
-										<div class="6u 12u$(xsmall)">
-											<input type="text" name="name" id="namelog" onkeyup="checklog(); return false;" value="" placeholder="Nickname" />
-											<label for="namelog" id="namelogtxt" class="lola"></label>
+										<div class="6u 12u$(medium)">
+											<input type="email" name="name" id="emailforgot" onkeyup="checkemail(); return false;" value="" placeholder="Email" />
+											<label for="namelog" id="emailforgottxt" class="lola"></label>
 										</div>
-										<div class="6u$ 12u$(xsmall)">
-											<input type="password" name="password" id="passwdlog" onkeyup="checklog(); return false;" value="" placeholder="Password" />
-											<label for="passwordlog" id="passwdlogtxt" class="length"></label>
-										</div>
-
 										<!-- Break -->
 										<div class="12u$">
 											<ul class="actions">
-												<li><input type="submit" id="login" value="Log in" /></li>
-												<li><div class="10u 12u$(medium)">Dont have an account? <a href="signup.html"> Sign up</div></a>
-												<li><div class="8u 12u$(medium)">Forgot your password? <a href="forgot.html"> Reset password </div></a>
+												<li><input type="submit" id="forgot" value="Reset password" /></li>
 											</ul>
 										</div>
 									</div>
