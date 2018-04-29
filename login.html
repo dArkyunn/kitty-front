@@ -10,8 +10,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="assets/js/check.js"></script>
-		<script src="assets/js/asyncrequest.js"></script>
+		<script src="assets/js/checklogin.js"></script>
+		<script src="assets/js/asyncrequestlog.js"></script>
 
 	</head>
 	<body class="subpage">
@@ -42,18 +42,18 @@
 					<form method="post" id="logform">
 									<div class="row uniform">
 										<div class="6u 12u$(xsmall)">
-											<input type="text" name="name" id="namee" value="" placeholder="Nickname" />
-											<label for="namelog" id="namelog" class="lola"></label>
+											<input type="text" name="name" id="namelog" onkeyup="checklog(); return false;" value="" placeholder="Nickname" />
+											<label for="namelog" id="namelogtxt" class="lola"></label>
 										</div>
 										<div class="6u$ 12u$(xsmall)">
-											<input type="password" name="password" id="password" value="" placeholder="Password" />
-											<label for="passwordlog" id="lengthlog" class="length"></label>
+											<input type="password" name="password" id="passwdlog" onkeyup="checklog(); return false;" value="" placeholder="Password" />
+											<label for="passwordlog" id="passwdlogtxt" class="length"></label>
 										</div>
 
 										<!-- Break -->
 										<div class="12u$">
 											<ul class="actions">
-												<li><input type="submit" id="register" value="Log in" /></li>
+												<li><input type="submit" id="login" value="Log in" /></li>
 												<li>Dont have an account? <a href="signup.html"> Sign up </a>
 											</ul>
 										</div>
