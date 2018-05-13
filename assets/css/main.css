@@ -2846,6 +2846,7 @@
 
 		.wrapper .inner {
 			margin: 0 auto;
+			margin-right: 0 auto;
 			width: 80em;
 			position: relative;
 			z-index: 99;
