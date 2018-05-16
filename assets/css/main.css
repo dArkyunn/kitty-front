@@ -2057,7 +2057,33 @@
 			.button.special:active {
 				background-color: #041321;
 			}
+.multi {
+		display: -ms-flexbox;
+		-ms-flex-pack: justify;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-moz-justify-content: space-around;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-around;
+	}
 
+		.multi.multi-2 {
+			-moz-align-items: stretch;
+			-webkit-align-items: stretch;
+			-ms-align-items: stretch;
+			align-items: stretch;
+		}
+
+		.multi.multi-2 .col {
+			width: 25%;
+		}
 /* Flex */
 
 	.flex {
