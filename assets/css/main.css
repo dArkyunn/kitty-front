@@ -2504,7 +2504,7 @@
 			margin-left:auto;
 			margin-right:auto;
 			overflow:auto;
-			width: 75%;
+			width: 85%;
 			}
 		}
 		.image.fit.small {
@@ -2512,7 +2512,16 @@
 			margin-left:auto;
 			margin-right:auto;
 			overflow:auto;
-			width: 40%;
+			width: 55%;
+		}
+		@media screen and (max-width: 736px) {
+			.image.fit.small {
+			display:block;
+			margin-left:auto;
+			margin-right:auto;
+			overflow:auto;
+			width: 65%;
+			}
 		}
 
 
