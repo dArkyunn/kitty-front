@@ -2068,10 +2068,10 @@
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		-moz-justify-content: space-around;
+		-moz-justify-content: stretch;
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
-		justify-content: space-around;
+		justify-content: stretch;
 	}
 
 		.multi.multi-2 {
@@ -2229,7 +2229,6 @@
 		text-decoration: none;
 		display: block;
 		position: relative;
-		padding:0 1em;
 		margin: 0 0 1em 0;
 		
 	}
