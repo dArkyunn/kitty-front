@@ -2491,11 +2491,21 @@
 			margin: 0 0 2em 0;
 			width: 100%;
 		}
+		.image.fit.medium {
+			display:block;
+			margin-left:auto;
+			margin-right:auto;
+			overflow:auto;
+			width: 45%;
+		}
+
+
 		.image.fit.small {
 			display:block;
 			margin-left:auto;
 			margin-right:auto;
-			width: 15%;
+			overflow:auto;
+			width: 40%;
 		}
 
 
@@ -2869,7 +2879,7 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 6em 0 4em 0;
+		padding: 1em 0 1em 0;
 		position: relative;
 	}
 
