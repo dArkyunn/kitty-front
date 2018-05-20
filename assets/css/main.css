@@ -52,6 +52,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		word-wrap: break-word;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -2459,11 +2460,18 @@
 		}
 
 		.image.left, .image.right {
-			max-width: 40%;
+			width: 40%;
+			height: auto;
 		}
+		.image.left.small, .image.right.small {
+			width: 15%;
+			height: auto;
+		}
+
 
 			.image.left img, .image.right img {
 				width: 100%;
+				height: auto;
 			}
 
 		.image.left {
@@ -2483,6 +2491,13 @@
 			margin: 0 0 2em 0;
 			width: 100%;
 		}
+		.image.fit.small {
+			display:block;
+			margin-left:auto;
+			margin-right:auto;
+			width: 15%;
+		}
+
 
 			.image.fit img {
 				width: 100%;
