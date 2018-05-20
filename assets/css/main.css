@@ -2497,9 +2497,16 @@
 			margin-right:auto;
 			overflow:auto;
 			width: 45%;
+ 		}
+		@media screen and (max-width: 736px) {
+			.image.fit.medium {
+			display:block;
+			margin-left:auto;
+			margin-right:auto;
+			overflow:auto;
+			width: 75%;
+			}
 		}
-
-
 		.image.fit.small {
 			display:block;
 			margin-left:auto;
@@ -2879,7 +2886,7 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 1em 0 1em 0;
+		padding: 6em 0 4em 0;
 		position: relative;
 	}
 
