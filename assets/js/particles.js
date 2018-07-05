@@ -1514,6 +1514,14 @@ window.particlesJS = function(tag_id, params){
 
   /* launch particle.js */
   if(canvas != null){
+    /* Disable animations/transitions until the page has loaded.*/
+    var	$window = $(window),
+    $body = $('body');
+    $body.addClass('is-loading');
+    $window.on('load', function() {
+			$body.removeClass('is-loading');
+    });
+
     pJSDom.push(new pJS(tag_id, params));
   }
 
@@ -1522,6 +1530,7 @@ window.particlesJS = function(tag_id, params){
 window.particlesJS.load = function(tag_id, path_config_json, callback){
 
   /* load json config */
+			
   var xhr = new XMLHttpRequest();
   xhr.open('GET', path_config_json);
   xhr.onreadystatechange = function (data) {
