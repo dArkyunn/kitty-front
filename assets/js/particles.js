@@ -1517,7 +1517,6 @@ window.particlesJS = function(tag_id, params){
     /* Disable animations/transitions until the page has loaded.*/
     var	$window = $(window),
     $body = $('body');
-    $body.addClass('is-loading');
     $window.on('load', function() {
 			$body.removeClass('is-loading');
     });
