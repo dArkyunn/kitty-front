@@ -15,7 +15,9 @@
 	});
 
 	$(function() {
-
+			var  $window = $(window),
+			$body = $('body');
+ 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
 
