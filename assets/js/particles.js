@@ -1518,8 +1518,10 @@ window.particlesJS = function(tag_id, params){
     var	$window = $(window),
     $body = $('body');
     $window.on('load', function() {
+	    		$('#loading').fadeOut("slow", function() {
+				$(this).remove();
+			});
 			$body.removeClass('is-loading');
-	    		$('#loading').remove();
     });
 
     pJSDom.push(new pJS(tag_id, params));
