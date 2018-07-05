@@ -1519,6 +1519,7 @@ window.particlesJS = function(tag_id, params){
     $body = $('body');
     $window.on('load', function() {
 			$body.removeClass('is-loading');
+	    		$('#loading').remove();
     });
 
     pJSDom.push(new pJS(tag_id, params));
