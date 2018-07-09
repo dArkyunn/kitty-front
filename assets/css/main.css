@@ -65,7 +65,7 @@
 		padding: 1em 1em 1em 1em;
 		position: relative;
 		background-color: #031010;
-		height:100%;
+		min-height:100%;
 		color: #c1c7cd;
 
 	}
