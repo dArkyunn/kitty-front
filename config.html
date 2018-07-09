@@ -33,20 +33,51 @@
 
 			<!-- One -->
 				<section class="wrapper style1">
-					<div class="inner">
-					<div class="rowconf">
- <div class="vertical-menu">
-  <a href="#" class="active">Configuration</a>
-  <a href="#">General</a>
-  <a href="#">Privacy</a>
-  <a href="#">Account</a>
-  <a href="#">Network</a>
-</div> 
- <div class="configuration">
-<h1>Configuration</h1>
+					<div class="config">
+ <div id="vertical-menu" class="vertical-menu" style="display:inline;height:40em;">
+  <a id="1" href="#" onclick="active(this.id);"class="active">Configuration</a>
+  <a id="2" href="#" onclick="active(this.id);">General</a>
+  <a id="3" href="#" onclick="active(this.id);">Privacy</a>
+  <a id="4" href="#" onclick="active(this.id);">Account</a>
+  <a id="5" href="#" onclick="active(this.id);">Network</a>
+	</div> 
+ <div style="position:absolute;left:15%;top:0%;display:inline;z-index:100;" id="configuration-head" class="configuration-head">
+ <p>Configuration</p>
+ </div>
+ <div style="position:relative;left:0%;display:inline;top:56px;" id="configuration" class="configuration">
+	<section class="wrapperconf">
 
+<p>XDXD</p>
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+<p>XDXD</p>
+
+	</section>
 </div>
-</div>
+<script>
+	var height = window.innerHeight;
+	document.getElementById('configuration').style.height = height * 0.75 - 56 + "px";
+	document.getElementById('vertical-menu').style.height = height * 0.75 + "px";
+	</script>
+
 
 					</div>
 				</section>
@@ -153,6 +184,8 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/config.js"></script>
+
 
 	</body>
 </html>
