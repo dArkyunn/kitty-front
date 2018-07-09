@@ -62,37 +62,38 @@
     		text-decoration: none; /* Remove underline from links */
 	}
 .wrapperconf {
-		padding: 1em 1em 1em 1em;
+		padding: 0 1em 1em 1em;
 		position: relative;
 		background-color: #031010;
 		min-height:100%;
+		z-index:1;
 		color: #c1c7cd;
 
 	}
 
 		.wrapperconf:before {
 			content: '';
-			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			display: block;
+			z-index:1;
 			#background-image: url(../../images/bg.jpg);
 			#background-size: cover;
 			#background-repeat: no-repeat;
 			opacity: 0.35;
-			z-index: 1;
 		}
 
 
 
 	.configuration {
 	width: 85%;
-	overflow-y:scroll;
+	margin-bottom:6%;
+	overflow-y:auto;
 	}
 	.configuration h1 {
-		top:0;
+		top:1em;
+		margin-bottom:2em;
 		position:relative;
     		background-color: #1C3F58; /* Dark grey background on mouse-over */
     		padding: 13.5px; /* Add some padding */
