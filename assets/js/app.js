@@ -132,38 +132,4 @@ particlesJS('particles-js',
 
 );
 
-var config = {
-  protocol: "https",
-  address: "api.kittyuniverse.com",
-  port: "80"
-};
 
-unction synchronousAddKitty(kittyData) {
-    var xhttp = new XMLHttpRequest();
-    var endpoint = "/kitty/new"
-    xhttp.open("POST", config.protocol+"://"+config.address+":"+config.port+, false);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(kittyData);
-    var response = JSON.parse(xhttp.responseText);
-    return response;
-}
-
-// ASYNC REST API REQUEST FUNCTIONS //
-
-function addKitty(kittyData, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.callback = callback;
-    var endpoint = "/kitty/new"
-    xhttp.open("POST", config.protocol+"://"+config.address+":"+config.port+, true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhr.send(kittyData);
-}
-
-function deleteKitty(kittyId, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.callback = callback;
-    var endpoint = "/kitty/"+kittyId
-    xhttp.open("DELETE", config.protocol+"://"+config.address+":"+config.port+, true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhr.send(null);
-}

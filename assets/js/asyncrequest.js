@@ -68,7 +68,7 @@ function addKitty(kittyData, callback) {
 function register(registerData, callback) {
     var xhr = new XMLHttpRequest();
     xhr.callback = callback;
-    var endpoint = "/register/new"
+    var endpoint = "/account/create"
     xhttp.open("POST", config.protocol+"://"+config.address+":"+config.port+, true);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhr.send(registerData);
