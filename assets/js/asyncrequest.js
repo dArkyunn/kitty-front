@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
     if(!checkform()){
     event.preventDefault();
 	// Access the form element...
-    register(form, checkform());
+    register(form);
     }
   });
    
@@ -51,7 +51,7 @@ window.addEventListener("load", function () {
 var config = {
   protocol: "https",
   address: "api.kittyuniverse.com",
-  port: "80"
+  port: "443"
 };
 
 function synchronousAddKitty(kittyData) {
