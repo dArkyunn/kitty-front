@@ -1,5 +1,6 @@
 window.addEventListener("load", function () {
-  function sendData() {
+  
+	/*function sendData() {
     var XHR = new XMLHttpRequest();
 
     // Bind the FormData object and the form element
@@ -22,14 +23,62 @@ window.addEventListener("load", function () {
     XHR.send(FD);
   }
  
+ 
   // Access the form element...
   var form = document.getElementById("regform");
-
+*/
   // ...and take over its submit event.
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     if(checkform()){
-    sendData();
+	// Access the form element...
+    var form = document.getElementById("regform");
+    register(form);
     }
   });
 });
+
+var config = {
+  protocol: "https",
+  address: "api.kittyuniverse.com",
+  port: "80"
+};
+
+function synchronousAddKitty(kittyData) {
+    var xhttp = new XMLHttpRequest();
+    var endpoint = "/kitty/new"
+    xhttp.open("POST", config.protocol+"://"+config.address+":"+config.port+, false);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send(kittyData);
+    var response = JSON.parse(xhttp.responseText);
+    return response;
+}
+
+// ASYNC REST API REQUEST FUNCTIONS //
+
+function addKitty(kittyData, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.callback = callback;
+    var endpoint = "/kitty/new"
+    xhttp.open("POST", config.protocol+"://"+config.address+":"+config.port+, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhr.send(kittyData);
+}
+
+function register(registerData, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.callback = callback;
+    var endpoint = "/register/new"
+    xhttp.open("POST", config.protocol+"://"+config.address+":"+config.port+, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhr.send(registerData);
+}
+
+function deleteKitty(kittyId, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.callback = callback;
+    var endpoint = "/kitty/"+kittyId
+    xhttp.open("DELETE", config.protocol+"://"+config.address+":"+config.port+, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhr.send(null);
+}
