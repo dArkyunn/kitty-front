@@ -9,6 +9,8 @@
 		<title>Generic - Broadcast by TEMPLATED</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="assets/js/jquery.min.js"></script>
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="subpage">
@@ -40,7 +42,7 @@
 						</header>
 
 						<div class="flex flex-2">
-						<div style="position:relative;width:65%;" class="video">
+						<div style="position:relative;width:65%;"class="video">
 							<div class="video-wrapper">
 								<iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/s6zR2T9vn2c" frameborder="0" allowfullscreen></iframe>
 							</div>
@@ -54,11 +56,8 @@
 						
 
 						</div>
-						<script>
-						document.getElementById("chat").style.height = document.getElementById("video").style.height;
-						</script>
 						</div>
-						<div class="controls" style="width:60%;">
+						<div id="controls" class="controls">
 						<button class="button pg">Red light</button>
 						<button class="button pg">Blue light</button>
 						<button class="button pg">White light</button>
@@ -72,6 +71,10 @@
 						<button class="button pg">Scare cat</button>
 
 						</div>
+						<script>
+						document.getElementById("chat").style.height = $("#video").height() + "px";
+						document.getElementById("controls").style.width = $("#video").width() + "px";
+						</script>
 
 						<p style="width:60%;">Curabitur venenatis lorem ut finibus finibus. Ut quis eleifend libero, nec ultricies metus. Morbi magna risus, congue sit amet pellentesque eget, malesuada ut justo. Sed ac pretium quam. Ut vel ex vitae enim sagittis posuere ac id erat. Vestibulum vel ullamcorper tellus. Donec sapien massa, venenatis ac felis vel, vestibulum sagittis enim. Maecenas ut egestas lorem, nec luctus ligula. Vestibulum neque diam, aliquet non enim a, cursus lacinia metus. Aenean fringilla luctus rhoncus. Integer vulputate massa ac suscipit venenatis. Integer luctus elit non nulla fringilla, ullamcorper maximus sem congue. Integer tristique eu nisi nec fermentum. Ut malesuada quis massa at ultricies.</p>
 											</div>
@@ -123,7 +126,6 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
