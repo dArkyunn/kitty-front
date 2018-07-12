@@ -46,6 +46,13 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+	.controls {
+	border-style:solid;
+	border-width:2px;
+	border-radius:5px;
+	border-color:#222222;
+	background-color:#444444;
+	}
 	.configuration-head {
 	background-color: #999999;
 	width: 85%;
@@ -100,6 +107,16 @@
  		color: white !important; /* Black text color */
    		display: block; /* Make the links appear below each other */
     		text-decoration: none; /* Remove underline from links */
+	}
+	
+	.chat {
+	background-color:#222222;
+	position:relative;
+	margin: 0 0 0 0;
+	display:inline-block;
+	z-index:200;
+
+	
 	}
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -2003,6 +2020,15 @@
 		.button.big {
 			font-size: 1.35em;
 		}
+		input[type="submit"].pg,
+		input[type="reset"].pg,
+		input[type="button"].pg,
+		button.pg,
+		.button.pg {
+			font-size: 1em;
+			margin: 1% 1% 1% 1%
+		}
+
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
@@ -2978,6 +3004,13 @@
 			position: relative;
 			z-index: 99;
 		}
+		.wrapper .playground {
+			margin: 0 6%;
+			margin-right: 0 6%;
+			width: 88%;
+			position: relative;
+			z-index: 99;
+		}
 		.wrapper .config {
 			display:flex;
 			margin: 0 3%;
@@ -3459,6 +3492,7 @@
 		margin: 0 0 2em 0;
 		overflow: hidden;
 		position: relative;
+		display: inline-block;
 	}
 
 		.video img {
