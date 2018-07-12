@@ -52,6 +52,7 @@
 	border-radius:5px;
 	border-color:#222222;
 	background-color:#444444;
+	margin: 0 0 1em 0;
 	}
 	.configuration-head {
 	background-color: #999999;
@@ -2026,7 +2027,19 @@
 		button.pg,
 		.button.pg {
 			font-size: 1em;
-			margin: 1% 1% 1% 1%
+			margin: 1% 1% 1% 1%;
+		}
+		input[type="submit"].pgalt,
+		input[type="reset"].pgalt,
+		input[type="button"].pgalt,
+		button.pgalt,
+		.button.pgalt {
+			font-size: 1em;
+			margin: 1% 1% 1% 1%;
+			background-color: #aaaaaa !important;
+			box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+			color: #ffffff !important;
+
 		}
 
 
