@@ -51,7 +51,25 @@
 							-->
 						</div>
 						<div id="chat" style="width:31%;min-height:60%;height:60%;" class="chat">
-						aaaaaa
+							<div id="chattext"  style="width:98%;height:80.5%;left:1%;top:1%;" class="chattext">
+								<p>Welcome to KittyChat!</p>
+							</div>
+							<textarea id="usermsg" style="white-space: pre-line;position:absolute;top:83%;left:1%;height:16%;width:98%;z-index:202;resize:none;" name="message" id="message" placeholder="Press Enter to send a message" rows="6"></textarea>
+	<script>
+$(function() {
+    $("#usermsg").keypress(function (e) {
+        if(e.which == 13) {
+            //submit form via ajax, this is not JS but server side scripting so not showing here
+            $("#chattext").append($(this).val() + "<br/>");
+            $(this).val("");
+	    var chattext = document.getElementById("chattext");
+	    chattext.scrollTop = chattext.scrollHeight;
+            e.preventDefault();
+        }
+    });
+});
+	</script>
+
 						
 
 						</div>
