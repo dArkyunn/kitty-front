@@ -16,6 +16,26 @@ function handleclickswitch(){
 
 	}
 }
+function handlecolor(idfarb,id){
+	//var button=document.getElementById(id);
+	//button.classList.toggle("pgalt");
+	//button.classList.toggle("pg");
+	var color = document.getElementById(idfarb).value;
+	document.getElementById(id).style.backgroundColor = color;
+}
+function handleclickcolor(id){
+	//var button=document.getElementById(id);
+	//button.classList.toggle("pgalt");
+	//button.classList.toggle("pg");
+	if(!$('#menuu').is(":visible")) {
+	$("#" + id).show();	
+	}
+	else{
+        $('#' + id).hide();
+    }
+}
+
+
 function handleclickflash(id){
 	//var button=document.getElementById(id);
 	//button.classList.toggle("pgalt");
