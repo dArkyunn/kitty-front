@@ -1,3 +1,20 @@
+	var config = { "publicemail":"ny", "oldpass": "", "newpass": "", "confpass":"", "chgemail": "", "chgemailpwd": "", };
+	//Parse configuration from server
+	/*
+	* * * *
+	*/
+function checkcheckbox(id){
+	if (id.checked){
+		config.publicemail = "y";
+	}
+	else{
+		config.publicemail = "n";
+	}
+
+
+
+	}
+
 function active(id) {
 	var a = document.getElementsByClassName("active");
 	a[0].className="";
@@ -11,7 +28,10 @@ function active(id) {
 	document.getElementById('confhead').innerHTML = "General";		
 	}
 	if (id == 3){
-	document.getElementById('configuration').innerHTML= "<section class='wrapperconf'><br></br><input type='checkbox' id='copy' name='copy'><label id='checkcopy' for='copy'>Allow my private email address to be publicly displayed</label></input></section>";	
+	document.getElementById('configuration').innerHTML= "<section class='wrapperconf'><br></br><input type='checkbox' onchange='checkcheckbox(this)' id='copy' name='copy'><label id='pubemail' for='copy'>Allow my private email address to be publicly displayed</label></input></section>";	
+	if (config.publicemail == "y"){
+	document.getElementById("copy").checked = true;
+	}
 	document.getElementById('confhead').innerHTML = "Privacy";	
 }
 	if (id == 4){

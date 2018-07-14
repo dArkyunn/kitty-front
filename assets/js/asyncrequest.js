@@ -42,10 +42,18 @@ window.addEventListener("load", function () {
     // Access the form element...
     var form = document.getElementById("forgotform");
     if(checkemailforgot()){
-    sendData(form);
+    forgot(form);
     }
   });
-	
+    logform.addEventListener("submit", function (event) {
+    event.preventDefault();
+    // Access the form element...
+    var form = document.getElementById("forgotform");
+    if(checklogin()){
+    login(form);
+    }
+  });
+
 });
 
 var config = {
@@ -83,6 +91,15 @@ function register(registerData, callback) {
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send(registerData);
 }
+function login(registerData, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.callback = callback;
+    var endpoint = "/account/login"
+    xhr.open("POST", config.protocol+"://"+config.address+":"+config.port, true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.send(registerData);
+}
+
 function forgot(registerData, callback) {
     var xhr = new XMLHttpRequest();
     xhr.callback = callback;
