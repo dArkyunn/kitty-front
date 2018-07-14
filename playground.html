@@ -85,10 +85,10 @@ var history =[];var i=0;var a=0;
 						</div>
 						</div>
 						<div id="controls" class="controls">
-						<button id="1" class="button pg" onclick="handleclicktoggle(this.id);">Red light</button>
-						<button id="2" class="button pg"onclick="handleclicktoggle(this.id);">Blue light</button>
-						<button id="3" class="button pg"onclick="handleclicktoggle(this.id);">White light</button>
-						<button id="4" class="button pg"onclick="handleclicktoggle(this.id);">Green light</button>
+						<button id="1" class="button pg" onclick="handleclickswitch(this.id,'2', '3', '4');">Red light</button>
+						<button id="2" class="button pg"onclick="handleclickswitch(this.id, '1', '3', '4');">Blue light</button>
+						<button id="3" class="button pg"onclick="handleclickswitch(this.id, '1', '2', '4');">White light</button>
+						<button id="4" class="button pg"onclick="handleclickswitch(this.id, '1', '2', '3');">Green light</button>
 						<button id="5" class="button pg"onclick="handleclickflash(this.id);">Whatever</button>
 						<button id="6" class="button pg"onclick="handleclickflash(this.id);">Random</button>
 						<button id="7" class="button pg"onclick="handleclickflash(this.id);">XD</button>

@@ -25,11 +25,11 @@ window.addEventListener("load", function () {
  
 */ 
   // Access the form element...
-  var form = document.getElementById("regform");
 
   // ...and take over its submit event.
   form.addEventListener("submit", function (event) {
     if(!checkform()){
+    var form = document.getElementById("form");
     event.preventDefault();
 	// Access the form element...
     register(form);
@@ -40,19 +40,28 @@ window.addEventListener("load", function () {
   forgotform.addEventListener("submit", function (event) {
     event.preventDefault();
     // Access the form element...
+    if(checkemailforgot()){ 
     var form = document.getElementById("forgotform");
-    if(checkemailforgot()){
     forgot(form);
     }
   });
     logform.addEventListener("submit", function (event) {
     event.preventDefault();
     // Access the form element...
-    var form = document.getElementById("forgotform");
     if(checklogin()){
+    var form = document.getElementById("logform");
     login(form);
     }
   });
+    kittyform.addEventListener("submit", function (event) {
+    event.preventDefault();
+    // Access the form element...
+    if(checklogin()){
+    var form = document.getElementById("kittyform");
+    addKitty(form);
+    }
+  });
+
 
 });
 
@@ -77,7 +86,7 @@ function synchronousAddKitty(kittyData) {
 function addKitty(kittyData, callback) {
     var xhr = new XMLHttpRequest();
     xhr.callback = callback;
-    var endpoint = "/kitty/new"
+    var endpoint = "/kitty/new";
     xhr.open("POST", config.protocol+"://"+config.address+":"+config.port, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send(kittyData);
@@ -86,7 +95,7 @@ function addKitty(kittyData, callback) {
 function register(registerData, callback) {
     var xhr = new XMLHttpRequest();
     xhr.callback = callback;
-    var endpoint = "/account/create"
+    var endpoint = "/account/create";
     xhr.open("POST", config.protocol+"://"+config.address+":"+config.port, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send(registerData);
@@ -94,7 +103,7 @@ function register(registerData, callback) {
 function login(registerData, callback) {
     var xhr = new XMLHttpRequest();
     xhr.callback = callback;
-    var endpoint = "/account/login"
+    var endpoint = "/account/login";
     xhr.open("POST", config.protocol+"://"+config.address+":"+config.port, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send(registerData);
@@ -103,7 +112,7 @@ function login(registerData, callback) {
 function forgot(registerData, callback) {
     var xhr = new XMLHttpRequest();
     xhr.callback = callback;
-    var endpoint = "/account/forgot"
+    var endpoint = "/account/forgot";
     xhr.open("POST", config.protocol+"://"+config.address+":"+config.port, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send(registerData);
@@ -112,7 +121,7 @@ function forgot(registerData, callback) {
 function deleteKitty(kittyId, callback) {
     var xhr = new XMLHttpRequest();
     xhr.callback = callback;
-    var endpoint = "/kitty/"+kittyId
+    var endpoint = "/kitty/"+kittyId;
     xhr.open("DELETE", config.protocol+"://"+config.address+":"+config.port, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send(null);
