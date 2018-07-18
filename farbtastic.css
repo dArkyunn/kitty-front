@@ -24,6 +24,7 @@
   cursor: crosshair;
 }
 .farbtastic, .farbtastic .wheel {
+  margin: auto;
   width: 195px;
   height: 195px;
 }

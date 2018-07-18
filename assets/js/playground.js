@@ -22,6 +22,7 @@ function handlecolor(idfarb,id){
 	//button.classList.toggle("pg");
 	var color = document.getElementById(idfarb).value;
 	document.getElementById(id).style.backgroundColor = color;
+
 }
 function handleclickcolor(id){
 	//var button=document.getElementById(id);

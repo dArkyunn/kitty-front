@@ -2094,7 +2094,7 @@
 	button,
 	.button {
 		background-color: #041625;
-		color: #ffffff !important;
+		color: #ffffff;
 	}
 
 		input[type="submit"]:hover,
@@ -3110,7 +3110,7 @@
 			.wrapper.style1 button,
 			.wrapper.style1 .button {
 				background-color: #041625;
-				color: #ffffff !important;
+				color: #ffffff;
 			}
 
 				.wrapper.style1 input[type="submit"]:hover,
