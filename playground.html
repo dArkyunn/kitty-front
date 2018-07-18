@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script src="assets/js/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js" integrity="sha256-ji09tECORKvr8xB9iCl8DJ8iNMLriDchC1+p+yt1hSs=" crossorigin="anonymous"></script>
 
  		<link rel="stylesheet" href="farbtastic.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -59,6 +60,11 @@
 							</div>
 							<textarea maxlength="200" id="usermsg" style="white-space: pre-line;position:absolute;top:82.5%;left:1%;height:16.5%;width:98%;z-index:202;resize:none;" name="message" id="message" placeholder="Press Enter to send a message" rows="6"></textarea>
 	<script>
+		 var socket = io('http://socketio.kittyuniverse.com');
+		socket.emit('joinRoom', "testroom");
+		socket.on('newChatMessage', function(nick, message){
+				$("#chattext").append("<b>" + nick   + "</b> "+ message + "<br/>");
+		});
 $(function() {
 var history =[];var i=0;var a=0;
     $("#usermsg").keydown(function (e) {
@@ -66,7 +72,8 @@ var history =[];var i=0;var a=0;
 	    var chattext = document.getElementById("chattext");
 	    if ($(this).val() != ""){
             //submit form via ajax, this is not JS but server side scripting so not showing here
-            $("#chattext").append("Kurko: " + $(this).val() + "<br/>");
+            socket.emit('chatMessagePut', $(this).val());
+	    $("#chattext").append("<b>" + nick   + "</b> "+ message + "<br/>");
 	    history.splice(i, 0, $(this).val());
 	    i++;a=0;
             $(this).val("");
