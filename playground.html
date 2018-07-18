@@ -45,7 +45,7 @@
 						</header>
 
 						<div class="flex flex-2">
-						<div style="position:relative;width:65%;"class="video">
+						<div style="position:relative;width:65%;height:10%;"class="video">
 							<div class="video-wrapper">
 								<iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/6kzrFoXNYVg" frameborder="0" allowfullscreen></iframe>
 							</div>
@@ -115,8 +115,12 @@ var history =[];var i=0;var a=0; var nick="kurko";
     	$(document).ready(function() {
     	$('#picker').farbtastic('#color');
     });
-    document.getElementById("chat").style.height = $("#video").height() + "px";
-    document.getElementById("controls").style.width = $("#video").width() + "px";
+    	document.getElementById("chat").style.height = $("#video").height() + "px";
+     	document.getElementById("controls").style.width = $("#video").width() + "px";
+    window.onresize = function(event) {
+    	document.getElementById("chat").style.height = $("#video").height() + "px";
+     	document.getElementById("controls").style.width = $("#video").width() + "px";
+    }
 						</script>
 
 						<p style="width:60%;">Curabitur venenatis lorem ut finibus finibus. Ut quis eleifend libero, nec ultricies metus. Morbi magna risus, congue sit amet pellentesque eget, malesuada ut justo. Sed ac pretium quam. Ut vel ex vitae enim sagittis posuere ac id erat. Vestibulum vel ullamcorper tellus. Donec sapien massa, venenatis ac felis vel, vestibulum sagittis enim. Maecenas ut egestas lorem, nec luctus ligula. Vestibulum neque diam, aliquet non enim a, cursus lacinia metus. Aenean fringilla luctus rhoncus. Integer vulputate massa ac suscipit venenatis. Integer luctus elit non nulla fringilla, ullamcorper maximus sem congue. Integer tristique eu nisi nec fermentum. Ut malesuada quis massa at ultricies.</p>
