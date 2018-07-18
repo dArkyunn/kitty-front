@@ -64,6 +64,7 @@
 		socket.emit('adduseranon', "testroom");
 		socket.on('updatechat', function(nick, message){
 				$("#chattext").append("<b>" + nick   + "</b> "+ message + "<br/>");
+	    			chattext.scrollTop = chattext.scrollHeight;
 		});
 $(function() {
 var history =[];var i=0;var a=0; var nick="kurko";
@@ -77,7 +78,6 @@ var history =[];var i=0;var a=0; var nick="kurko";
             $(this).val("");
 		} 
 	    e.preventDefault();
-	    chattext.scrollTop = chattext.scrollHeight;
         }
 	if(e.which == 38 && a < i) {
 	a++;document.getElementById('usermsg').value = history[i-a];	
