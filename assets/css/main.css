@@ -41,6 +41,28 @@
     height: 120px;
     animation: spin 1s linear infinite;
 }
+.pagination {
+    display: inline-block;
+    margin:auto;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -3579,10 +3601,20 @@
 
 		.video .caption {
 			color: #c0c5c9;
-			padding: 1.5em;
+			padding: 1.40em;
 			font-size: 1.25em;
 			font-weight: 300;
 			margin: 0;
+		}
+		.video .captionsmall {
+			position:absolute;
+			color:#c0c5c9;
+			padding: 0;
+			bottom:0.5%;
+			right:0.5%;
+			font-size: 1.05em;
+			margin:0;
+			text-align:right;
 		}
 
 		.video .link {
