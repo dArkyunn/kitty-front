@@ -37,7 +37,6 @@
 			<!-- One -->
 				<section class="wrapper style1">
 					<div style="text-align:center;" class="inner">
-
 							<div class="flex flex-3">
 							<div class="video col">
 									<div class="image fit">
@@ -116,20 +115,35 @@
 									<a href="generic.html" class="link"><span>Join as guest</span></a>
 								</div>
 						<div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#">1</a>
-  <a href="#" class="active">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
+  <a id="0" onclick="switchpage('1')">&laquo;</a>
+  <a id="1" onclick="switchpage(this.id)" class="active">1</a>
+  <a id="2" onclick="switchpage(this.id)">2</a>
+  <a id="3" onclick="switchpage(this.id)">3</a>
+  <a id="4" onclick="switchpage(this.id)">4</a>
+  <a id="5" onclick="switchpage(this.id)">5</a>
+  <a id="6" onclick="switchpage(this.id)">6</a>
+  <a id="l" onclick="switchpage('6');">&raquo;</a>
 </div>
 
 
-
-
 					</div>
+<span style="position:relative;display:block;text-align:center;"> Sort by: </span>		
+	<div style="display:inline-block;padding:0;" class="2u$">
+		<div class="select-wrapper">
+			<select name="category" id="category">
+				<option value="1">Popularity</option>
+				<option value="1">Less popularity</option>
+				<option value="1">More current viewers</option>
+				<option value="1">Less current viewers</option>
+				<option value="1">Better rated</option>
+				<option value="1">Worse rated</option>
+				<option value="1">Newer</option>
+				<option value="1">Older</option>
+			</select>	
+		</div>
+	</div>
+
+
 					</div>
 				</section>
 
@@ -186,6 +200,7 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/asyncrequest.js"></script>
 			<script src="assets/js/checkforgot.js"></script>
+			<script src="assets/js/playground.js"></script>
 	
 
 	</body>

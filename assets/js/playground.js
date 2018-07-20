@@ -47,7 +47,12 @@ function handleclickflash(id){
 	document.getElementById(id).classList.toggle("pgalt");
 	document.getElementById(id).classList.toggle("pg");
 
-	}, 160);
+	}, 150);
 
 
+}
+function switchpage(id){
+	var a = document.getElementsByClassName("active");
+	a[0].className="";
+  	document.getElementById(id).className = 'active';
 }
