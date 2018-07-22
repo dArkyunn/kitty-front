@@ -1,34 +1,47 @@
-	var maxpages = 20;
-function handleclicktoggle(id){
-	//var button=document.getElementById(id);
-	//button.classList.toggle("pgalt");
-	//button.classList.toggle("pg");
-	document.getElementById(id).classList.toggle("pgalt");
-	document.getElementById(id).classList.toggle("pg");
+ var socket = io('ws://localhost:8080');
+	socket.emit('adduseranon', "Kurko");
+	socket.on('updatestatus', function(id){
+		if (id == 1 || id == 2 || id == 3 || id == 4){
+	            document.getElementById("1").classList.remove("pgalt");
+		    document.getElementById("1").classList.add("pg");
+	            document.getElementById("2").classList.remove("pgalt");
+		    document.getElementById("2").classList.add("pg");
+	            document.getElementById("3").classList.remove("pgalt");
+		    document.getElementById("3").classList.add("pg");
+	            document.getElementById("4").classList.remove("pgalt");
+		    document.getElementById("4").classList.add("pg");
+		    document.getElementById(id).classList.add("pgalt");
+		}
+		if (id == 5 || id == 6 || id == 7 || id == 'b'){
+			document.getElementById(id).classList.toggle("pgalt");
+			document.getElementById(id).classList.toggle("pg");
+			setTimeout(function(){
+				document.getElementById(id).classList.toggle("pgalt");
+				document.getElementById(id).classList.toggle("pg");
+
+			}, 150);
+		}
+		if (id == 9 || id == 'a'){
+			document.getElementById(id).classList.toggle("pgalt");
+			document.getElementById(id).classList.toggle("pg");
+		}
+
+ });
+
+var maxpages = 20;
+function sendclick(id){
+	socket.emit('sendaction', id);
+
 }
 function handleclickswitch(){
-	//var button=document.getElementById(id);
-	//button.classList.toggle("pgalt");
-	//button.classList.toggle("pg");
-	document.getElementById(arguments[0]).classList.add("pgalt");
-        for (var i = 1; i < arguments.length; ++i){
-            document.getElementById(arguments[i]).classList.remove("pgalt");
-	    document.getElementById(arguments[i]).classList.add("pg");
-
-	}
+	socket.emit('sendaction', arguments[0]);
 }
 function handlecolor(idfarb,id){
-	//var button=document.getElementById(id);
-	//button.classList.toggle("pgalt");
-	//button.classList.toggle("pg");
 	var color = document.getElementById(idfarb).value;
 	document.getElementById(id).style.backgroundColor = color;
 
 }
 function handleclickcolor(id){
-	//var button=document.getElementById(id);
-	//button.classList.toggle("pgalt");
-	//button.classList.toggle("pg");
 	if(!$('#menuu').is(":visible")) {
 	$("#" + id).show();	
 	}
@@ -39,18 +52,7 @@ function handleclickcolor(id){
 
 
 function handleclickflash(id){
-	//var button=document.getElementById(id);
-	//button.classList.toggle("pgalt");
-	//button.classList.toggle("pg");
-	document.getElementById(id).classList.toggle("pgalt");
-	document.getElementById(id).classList.toggle("pg");
-	setTimeout(function(){
-	document.getElementById(id).classList.toggle("pgalt");
-	document.getElementById(id).classList.toggle("pg");
-
-	}, 150);
-
-
+	socket.emit('sendaction', id);
 }
 function gotopage(id){
 	var a = document.getElementsByClassName("active");
