@@ -131,7 +131,7 @@
    		display: block; /* Make the links appear below each other */
     		text-decoration: none; /* Remove underline from links */
 	}
-	
+
 	.chat {
 	background-color:#222222;
 	position:relative;
@@ -150,7 +150,7 @@
 	}
 	.chattext br {
         line-height: 1%;
-        }	
+        }
 	.chattext p {
 	margin: 0 0 0 0;
 	}
@@ -2366,7 +2366,7 @@
 		display: block;
 		position: relative;
 		margin: 0 0 1em 0;
-		
+
 	}
 
 		.select-wrapper:before {
@@ -3908,7 +3908,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("../../images/kitties/kitty2.jpg");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -4086,5 +4086,3 @@
 			#footer {
 				padding: 3em 0 1em 0;
 			}
-
-		
