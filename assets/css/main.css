@@ -68,13 +68,33 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+	.slider {
+	display:absolute !important;
+	top:50%;
+
+
+	}
+	.control {
+	display:inline-block;
+	margin: 0.5% 0.5% 0.5% 0.5%;
+	background-color:#333333;
+	border-radius:3%;
+	padding: 0.5% 0.5% 0.5% 0.5%;
+	min-height:160px;
+	min-width:160px;
+	position:relative;
+	border: 1px solid black;
+	}
 	.controls {
+	display:block-inline !important;
 	border-style:solid;
 	border-width:2px;
 	border-radius:5px;
 	border-color:#222222;
 	background-color:#444444;
-	margin: 0 0 1em 0;
+	margin: 0 0 0.5% 0;
+	padding:0.5% 1% 0.5% 1%;
 	}
 	.configuration-head {
 	background-color: #999999;
@@ -3056,9 +3076,9 @@
 			z-index: 99;
 		}
 		.wrapper .playground {
-			margin: 0 6%;
-			margin-right: 0 6%;
-			width: 88%;
+			margin: 0 3%;
+			margin-right: 0 3%;
+			width: 94%;
 			position: relative;
 			z-index: 99;
 		}
