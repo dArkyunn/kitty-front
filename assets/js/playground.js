@@ -1,18 +1,7 @@
  var socket = io('ws://localhost:8080');
 	socket.emit('adduseranon', "Kurko");
 	socket.on('updatestatus', function(id){
-		if (id == 1 || id == 2 || id == 3 || id == 4){
-	            document.getElementById("1").classList.remove("pgalt");
-		    document.getElementById("1").classList.add("pg");
-	            document.getElementById("2").classList.remove("pgalt");
-		    document.getElementById("2").classList.add("pg");
-	            document.getElementById("3").classList.remove("pgalt");
-		    document.getElementById("3").classList.add("pg");
-	            document.getElementById("4").classList.remove("pgalt");
-		    document.getElementById("4").classList.add("pg");
-		    document.getElementById(id).classList.add("pgalt");
-		}
-		if (id == 5 || id == 6 || id == 7 || id == 'b'){
+		if (id == 1 || id == 6 || id == 7 || id == 'b'){
 			document.getElementById(id).classList.toggle("pgalt");
 			document.getElementById(id).classList.toggle("pg");
 			setTimeout(function(){
@@ -59,6 +48,15 @@ function loadcontrols(){
 	roundslider();
 	roundquarterslider();
 	verticalslider();
+	button();
+}
+function button(){
+	var html = `<div class="control">
+		<button id="1" class="button pg" onclick="handleclickflash(this.id);" style="width:170px;height:170px;position:absolute;top:-1.5%;left:-1.5%;">BOOM</button>	
+	</div>`
+	$("#controls").append(html);
+
+
 }
 function slider(){
 	var html = `<div class="control">
@@ -70,7 +68,7 @@ function slider(){
 }
 function verticalslider(){
 	var html = `<div class="control">
- 			 <input orient="vertical" style="height:140px;width:20px;position:absolute;top:0;left:40%;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+ 			 <input orient="vertical" style="height:140px;width:20px;position:absolute;top:0;left:72px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
 			</div>
 		
 		`
