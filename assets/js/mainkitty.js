@@ -72,6 +72,12 @@ function loadHeader () {
 
 }
 
+function updateMainFooterStats() {
+  // Connected color: #44FF3B
+  // Connecting color: #F5FF33
+  // Disconnected color: #E6001B
+}
+
 
 function loadFooter() {
   var footerHTML = `<!-- Footer -->
@@ -114,9 +120,12 @@ function loadFooter() {
           <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
           <li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
         </ul>
-        &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Coverr</a>. Video: <a href="https://coverr.co">Coverr</a>.
-        <br></br>
-        Made by Wiktor Jezioro and Damian Kurek
+        <b>Made with <font color="#E6001B;"><i class="fa fa-heart"></i></font> by Wiktor Jezioro and Damian Kurek - All belongs to KittyAlliance</b>
+        <br>
+        Online users counter:  <b>Loading...</b>  Total today unique views:  <b>Loading...</b>  , Socket connection status: <b><font color="#F5FF33;">Connecting...</font></b> , Web API connection status: <b><font color="#F5FF33;">Connecting...</font></b>
+        <br>
+        &copy; KittyAlliance <i class="fa fa-paw"></i> Design: <a href="https://templated.co">TEMPLATED</a> and KittyAlliance
+
       </div>
     </footer>`;
 
