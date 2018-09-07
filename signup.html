@@ -24,14 +24,14 @@
 
 
 			<!-- One -->
-				<section class="wrapper style1" style="background-image: url('images/kitties/kitty4.jpg'); background-position: center;
+				<section class="wrapper style1" style="background-image: url('images/kitties/kitty6.jpg'); background-position: center;
 				background-size: cover;
 				background-repeat: no-repeat;
 				border-top: 0;
 				min-height: 120vh;
 				height: 120vh !important;">
 					<div class="inner">
-					<h1 style="font-size: 30px;"><center> Create account in Our Universe! </center></h1>
+					<h1 style="font-size: 35px;"><center> Create account in Our Universe! </center></h1>
 					<form method="post" id="regform">
 									<div class="row uniform">
 										<div class="6u 12u$(xsmall)">
@@ -40,6 +40,14 @@
 										</div>
 										<div class="6u$ 12u$(xsmall)">
 											<input type="email" style="font-size: 20px;"  name="email" id="email" onkeyup="checkpassword(); return false;" value="" placeholder="Email" />
+											<label for="email" id="emailcheck" class="lol"></label>
+										</div>
+										<div class="6u 12u$(xsmall)">
+											<input type="text" style="font-size: 20px;"  name="name" id="namee" onkeyup="checkpassword(); return false;" value="" placeholder="Your firstname" />
+											<label for="namee" id="namecheck" class="lola"></label>
+										</div>
+										<div class="6u$ 12u$(xsmall)">
+											<input type="email" style="font-size: 20px;"  name="email" id="email" onkeyup="checkpassword(); return false;" value="" placeholder="Your lastname" />
 											<label for="email" id="emailcheck" class="lol"></label>
 										</div>
 										<div class="12u$ 12u$(xsmall)">
@@ -57,22 +65,29 @@
 
 										<!-- Break -->
 										<div class="6u 12u$(small)">
-											<input type="checkbox" id="copy" onclick="checkpassword();" name="copy">
-											<label id="checkcopy" for="copy">I agree with the terms and conditions</label>
+											<input type="checkbox" id="copy" name="copy">
+											<label id="checkcopy" style="font-size: 20px;" for="copy">I agree with the terms and conditions</label>
 										</div>
 										<div class="6u$ 12u$(small)">
-											<input type="checkbox" id="human" onclick="checkpassword();" name="human">
-											<label id="checkhuman" for="human">I am a human and not a robot</label>
+											<input type="checkbox" id="human" name="human">
+											<label id="checkhuman" style="font-size: 20px;" for="human">Account with pre-enabled Kitty playground manager</label>
 										</div>
 										<!-- Break -->
+										<!---
 										<div class="12u$">
 											<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-										</div>
+										</div> -->
 										<!-- Break -->
 										<div class="12u$">
 											<ul class="actions">
-												<li><input type="submit" id="register" value="Register" /></li>
-												<li><input type="reset" value="Reset" class="alt" /></li>
+
+												<li>
+													<a  id="register" class="button special big" /><i class="fa fa-paw"></i> Join the Kitty Universe!</a>
+												</li>
+												<li>
+													<a  id="register" class="button  " style="background:#3b5998; text:white;"/><i class="fa fa-paw"></i> Join using Facebook</a>
+												</li>
+												<li><input type="reset" value="Reset form" class="alt" /></li>
 												<li>Already got an account? <a href="login.html"> Log in </a>
 											</ul>
 										</div>

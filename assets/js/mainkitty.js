@@ -49,8 +49,8 @@ function loadHeaderMenu() {
   var headerMenuHTML = `<!-- Nav -->
     <nav id="menu">
       <ul class="links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="playgrounds.html">Playgrounds</a></li>
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="playgrounds.html"><i class="fa fa-paw"></i> Playgrounds</a></li>
         <li><a href="elements.html">Elements</a></li>
       </ul>
     </nav>`;
@@ -63,13 +63,13 @@ function loadHeader () {
   var headerHTML = `<!-- Header -->
     <header id="header">
       <h1><a href="index.html">KittyUniverse</a></h1>
-      <a href="login.html">Login</a>
-      <a href="signup.html">Register</a>
+      <a href="login.html"><i class="fa fa-sign-in"></i> Login</a>
+      <a href="signup.html"><i class="fa fa-paw"></i> Create account</a>
     <a href="#menu"></a>
     </header>`;
 
     document.getElementById("kitty_website_header").innerHTML = headerHTML;
-  
+
 }
 
 

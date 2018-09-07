@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Broadcast by TEMPLATED</title>
+		<title>playground_name - Playground - KittyUniverse</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script src="assets/js/jquery.min.js"></script>
@@ -19,22 +19,11 @@
 	</head>
 	<body class="subpage">
 
-		<!-- Header -->
-			<header id="header">
-				<h1><a href="index.html">KittyUniverse</a></h1>
-				<a href="login.html">Login</a>
-				<a href="signup.html">Register</a>
-			<a href="#menu"></a>
-			</header>
+		<div id="kitty_website_header">
+		</div>
+		<div id="kitty_website_header_menu">
+		</div>
 
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="playgrounds.html">Playgrounds</a></li>
-					<li><a href="elements.html">Elements</a></li>
-				</ul>
-			</nav>
 
 		<!-- Main -->
 			<div id="main">
@@ -78,19 +67,19 @@ var history =[];var i=0;var a=0; var nick="kurko";
 	    history.splice(i, 0, $(this).val());
 	    i++;a=0;
             $(this).val("");
-		} 
+		}
 	    e.preventDefault();
         }
 	if(e.which == 38 && a < i) {
-	a++;document.getElementById('usermsg').value = history[i-a];	
+	a++;document.getElementById('usermsg').value = history[i-a];
 	} if(e.which == 40 && a > 1) {
-	a--;document.getElementById('usermsg').value = history[i-a];	
+	a--;document.getElementById('usermsg').value = history[i-a];
 	}
     });
 });
 	</script>
 
-						
+
 
 						</div>
 						</div>
@@ -118,48 +107,8 @@ var history =[];var i=0;var a=0; var nick="kurko";
 
 			<!-- Three -->
 						<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="flex flex-3">
-						<div class="col">
-							<h3>Vestibullum</h3>
-							<ul class="alt">
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-								<li><a href="#">Vis id faucibus montes tempor</a></li>
-								<li><a href="#">Massa amet lobortis vel.</a></li>
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							</ul>
+						<div id="kitty_website_footer">
 						</div>
-						<div class="col">
-							<h3>Lobortis</h3>
-							<ul class="alt">
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-								<li><a href="#">Vis id faucibus montes tempor</a></li>
-								<li><a href="#">Massa amet lobortis vel.</a></li>
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							</ul>
-						</div>
-						<div class="col">
-							<h3>Accumsan</h3>
-							<ul class="alt">
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-								<li><a href="#">Vis id faucibus montes tempor</a></li>
-								<li><a href="#">Massa amet lobortis vel.</a></li>
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="copyright">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
-					</ul>
-					&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Coverr</a>. Video: <a href="https://coverr.co">Coverr</a>.
-				</div>
-			</footer>
 
 		<!-- Scripts -->
 			<script src="jquery.js"></script>
@@ -169,5 +118,8 @@ var history =[];var i=0;var a=0; var nick="kurko";
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/playground.js"></script>
  			<script type="text/javascript" src="farbtastic.js"></script>
+			<script src="assets/js/particles.js"></script>
+			<script src="assets/js/app.js"></script>
+			<script src="assets/js/mainkitty.js"></script>
 	</body>
 </html>
