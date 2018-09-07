@@ -62,7 +62,7 @@ function loadcontrols(){
 }
 function slider(){
 	var html = `<div class="control">
- 			 <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+ 			 <input type="range" style="height:20px;width:140px;position:absolute;top:72px;left:0;"min="1" max="100" value="50" class="slider" id="myRange">
 			</div>`
 	$("#controls").append(html);
 
@@ -70,8 +70,10 @@ function slider(){
 }
 function verticalslider(){
 	var html = `<div class="control">
- 			 <input orient="vertical" style="height:160px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
-			</div>`
+ 			 <input orient="vertical" style="height:140px;width:20px;position:absolute;top:0;left:40%;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+			</div>
+		
+		`
 	$("#controls").append(html);
 
 
@@ -79,7 +81,7 @@ function verticalslider(){
 
 function roundslider(){
 	var html =`<div class="control">
-                	<div id="type"></div>
+                	<div style="position:absolute;top:5px;left:5px;"id="type"></div>
             	   </div>
 		<style>
 		#type .rs-range-color  {
@@ -116,7 +118,7 @@ function roundslider(){
 }
 function roundquarterslider(){
 	var html =`<div style="height:160px;width:270px;"class="control">
-                	<div id="type1"></div>
+                	<div style="position:absolute;top:0;left:0;" id="type1"></div>
             	   </div>
 		<style>
 		#type1 .rs-range-color  {
@@ -175,6 +177,8 @@ loadcontrols();
 
 function gotopage(id){
 	var a = document.getElementsByClassName("active");
+
+	var maxpages=20;
 	a[0].className="";
 	if (id == "first"){
 		document.getElementById("1").innerHTML = "1"; 
@@ -197,6 +201,8 @@ function gotopage(id){
 
 
 }
+	var maxpages=20;
+
 function switchpage(id){
 	var a = document.getElementsByClassName("active");
 	a[0].className="";
