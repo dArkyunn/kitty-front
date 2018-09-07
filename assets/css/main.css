@@ -80,6 +80,7 @@
     -webkit-transition: .2s;
     transition: opacity .2s;
     border-radius:6px;
+    border: 1px solid black;
 }
 
 .slider:hover {
