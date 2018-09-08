@@ -63,6 +63,14 @@ $( "#register_action_button").click(function() {
 
 });
 
+function changeGlobalPlaygroundMainColor(newMainColor) {
+
+}
+
+function changeGlobalPlaygroundDerivativeColor(newDerivativeColor) {
+
+}
+
 /* when socket is Connected
 // Start latency checking
 var startTime = 0;

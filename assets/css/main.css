@@ -112,6 +112,8 @@
 	min-width:170px;
 	position:relative;
 	border: 1px solid black;
+	box-shadow: 0 0 12px #3ca4ff;
+
 	}
 	.controls {
 	display:block-inline !important;
@@ -122,6 +124,7 @@
 	background-color:#444444;
 	margin: 0 0 0.5% 0;
 	padding:0.5% 1% 0.5% 1%;
+		box-shadow: 0 0 12px #3ca4ff;
 	}
 	.configuration-head {
 	background-color: #999999;
@@ -186,6 +189,7 @@
 	display:inline-block;
 	z-index:200;
 	border-radius:5px;
+	box-shadow: 0 0 12px #3ca4ff;
 	}
 	.chattext {
 	background-color:#444444;
@@ -3580,13 +3584,14 @@
 
 /* Video */
 
+
 	.video {
 		background: rgba(255, 255, 255, 0.075);
 		border-radius: 4px;
 		border-style:solid;
-		border-color:#cce6ff;
-		box-shadow: 0 0 6px #3ca4ff;
-		border-width:1px;
+		/*border-color:#cce6ff;*/
+		box-shadow: 0 0 12px #3ca4ff;
+		border-width:0px;
 		margin: 0 0 2em 0;
 		overflow: hidden;
 		position: relative;
