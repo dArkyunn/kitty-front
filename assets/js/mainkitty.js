@@ -212,7 +212,7 @@ function loadFooter() {
         </ul>
         <b>Made with <font color="#E6001B;"><i class="fa fa-heart"></i></font> by Wiktor Jezioro and Damian Kurek - All belongs to KittyAlliance</b>
         <br>
-        Online users counter:  <b>Loading...</b>  Total today unique views:  <b>Loading...</b>  , Socket connection status: <b><font id="socket_connection_status_indicator_footer" color="#F5FF33;">Connecting...</font></b> , Web API connection status: <b><font color="#F5FF33;">Connecting...</font></b>
+        Online users counter:  <b>Loading...</b>  Total today unique views:  <b>Loading...</b>  , Socket connection status: <b><font id="socket_connection_status_indicator_footer" color="#F5FF33;">Connecting...</font></b> , Web API connection status: <b><font id="webapo_connection_status_indicator_footer" color="#F5FF33;">Connecting...</font></b>
         <br>
         &copy; KittyAlliance <i class="fa fa-paw"></i> Design: <a href="https://templated.co">TEMPLATED</a> and KittyAlliance
 
