@@ -1,3 +1,83 @@
+var currentTheme = "dark";
+var apiServerAddress = "http://localhost";
+var apiServerPort = 7777;
+var socketIOPort = 8080;
+var socketIOAddress = "localhost";
+var currentPlayground = "";
+var socketConnected = false;
+var addressBase = "";
+
+var socket = io('http://'+socketIOAddress+':'+socketIOPort);
+
+socket.on('connect', function() {
+    console.log("Connected to main C&C server");
+    changeSocketConnectionIndicator(true);
+});
+
+function changeSocketConnectionIndicator(isConnected) {
+      if (isConnected) {
+          $("#socket_connection_status_indicator_footer").text( "Connected" );
+          document.getElementById("socket_connection_status_indicator_footer").style.color = "#44FF3B";
+      } else {
+
+      }
+}
+
+$( "#login_action_button").click(function() {
+    var username = $( "#login_form_username_email" ).val();
+    var password = $( "#login_form_password" ).val();
+    isEmptyField("dsd");
+    if (isEmptyField(username) || isEmptyField(password)) {
+      swal("Błąd", "Wprowadź swoje hasło oraz nazwę użytkownika lub adres email", "error");
+    } else {
+  	  login(username, password);
+    }
+});
+
+$( "#register_action_button").click(function() {
+    var username = $( "#register_form_username" ).val();
+    var email = $( "#register_form_email" ).val();
+    var name = $( "#register_form_name" ).val();
+    var surname = $( "#register_form_surname" ).val();
+    var password = $( "#register_form_password" ).val();
+    var password2 = $( "#register_form_password2" ).val();
+    var accountType = document.getElementsByName('accountTypeSelectRadio').value;
+    accountType = 1;
+    console.log(accountType);
+    if (password == password2) {
+        var newUserData = {};
+        newUserData.email = email;
+        newUserData.username = username;
+        newUserData.password = password;
+        newUserData.name = name;
+        newUserData.surname = surname;
+        newUserData.account_type = accountType;
+        if (isEmptyField(username) || isEmptyField(password)) {
+          swal("Błąd", "Wypełnij wszystkie pola", "error");
+        } else {
+          register(newUserData);
+        }
+    } else {
+      swal("Błąd", "Podane hasła nie są identyczne", "error");
+    }
+
+});
+
+/* when socket is Connected
+// Start latency checking
+var startTime = 0;
+setInterval(function() {
+    startTime = Date.now();
+    socket.emit('ping');
+}, 1000);
+
+socket.on('pong', function() {
+  latency = Date.now() - startTime;
+  //console.log(latency);
+  $("#latency_ms").html( "" );
+  $("#latency_ms").html( latency );
+});
+*/
 
 function isEmptyField(str){
     if (str == undefined) {
@@ -63,8 +143,10 @@ function loadHeader () {
   var headerHTML = `<!-- Header -->
     <header id="header">
       <h1><a href="index.html">KittyUniverse</a></h1>
-      <a href="login.html"><i class="fa fa-sign-in"></i> Login</a>
-      <a href="signup.html"><i class="fa fa-paw"></i> Create account</a>
+
+      <a id="login_button_header" href="login.html"><i class="fa fa-sign-in"></i> Login</a>
+      <a id="register_button_header" href="signup.html"><i class="fa fa-paw"></i> Create account</a>
+
     <a href="#menu"></a>
     </header>`;
 
@@ -122,7 +204,7 @@ function loadFooter() {
         </ul>
         <b>Made with <font color="#E6001B;"><i class="fa fa-heart"></i></font> by Wiktor Jezioro and Damian Kurek - All belongs to KittyAlliance</b>
         <br>
-        Online users counter:  <b>Loading...</b>  Total today unique views:  <b>Loading...</b>  , Socket connection status: <b><font color="#F5FF33;">Connecting...</font></b> , Web API connection status: <b><font color="#F5FF33;">Connecting...</font></b>
+        Online users counter:  <b>Loading...</b>  Total today unique views:  <b>Loading...</b>  , Socket connection status: <b><font id="socket_connection_status_indicator_footer" color="#F5FF33;">Connecting...</font></b> , Web API connection status: <b><font color="#F5FF33;">Connecting...</font></b>
         <br>
         &copy; KittyAlliance <i class="fa fa-paw"></i> Design: <a href="https://templated.co">TEMPLATED</a> and KittyAlliance
 
@@ -131,6 +213,94 @@ function loadFooter() {
 
     document.getElementById("kitty_website_footer").innerHTML = footerHTML;
 }
+
+
+function redirectPageToRoute (destination) {
+      window.location.href = addressBase+destination.toString();
+}
+
+
+
+function refreshPage() {
+    location.reload();
+}
+
+
+
+function logout() {
+    setCookie("is_logged",false,7);
+    setCookie("auth_token", null, 90);
+    setCookie("user_id", null, 90);
+    refreshPage();
+}
+
+
+
+
+
+function login(username_email, password) {
+  showMainLoader();
+  $.ajax({
+      //  headers: {"x-api-key" : "123ABC987XYZ"},
+      url: apiServerAddress + ":" + apiServerPort + "/account/login",
+      type: "POST",
+      dataType: "json",
+      data: {
+       username: username_email,
+       password: password
+      },
+      success: function(response) {
+          if (response.status == "success") {
+              setCookie("is_logged", true, 90);
+              setCookie("auth_token", response.token, 90);
+              setCookie("user_id", response.userid, 90);
+              refreshPage();
+          } else if (response.status == "access_denied") {
+              swal("Błąd logowania", "Podane dane logowania są nieprawidłowe! Proszę spróbować ponownie :)", "error");
+          } else {
+              swal("Nieoczekiwany wyjątek", "Wystąpił błąd podczas wyświetlania informacji o błędzie!", "error");
+          }
+          hideMainLoader ();
+      },
+      error: (xhr, status, error) => {
+          console.log("Server connection error");
+          swal("Błąd połączenia", "Wystąpił błąd podczas połączenia z serwerem! Proszę spróbować ponownie później.", "error");
+          hideMainLoader();
+      }
+  });
+}
+
+function register(newUserData) {
+  showMainLoader();
+  $.ajax({
+      //  headers: {"x-api-key" : "123ABC987XYZ"},
+      url: apiServerAddress + ":" + apiServerPort + "/account/register",
+      type: "POST",
+      dataType: "json",
+      data: {
+       newUserData
+      },
+      success: function(response) {
+          if (response.status == "success") {
+              swal("Zarejestrowano", "Twoje konto zostało zarejestrowane! Teraz możesz aktywować swoje konto klikając link w wiadomości e-mail.", "success").then(function () {
+                  //redirectPageToRoute("/login");
+              });
+          } else if (response.status == "error") {
+              swal("Błąd!", "Wystąpił błąd podczas rejestracji! Proszę spróbować pozownie później", "error");
+          } else {
+              swal("Nieoczekiwany wyjątek", "Wystąpił błąd podczas wyświetlania informacji o błędzie!", "error");
+          }
+          hideMainLoader ();
+      },
+      error: (xhr, status, error) => {
+          console.log("Server connection error");
+          swal("Błąd połączenia", "Wystąpił błąd podczas połączenia z serwerem! Proszę spróbować ponownie później.", "error");
+          hideMainLoader();
+      }
+  });
+}
+
+
 
 function loadPage() {
   loadHeader();
