@@ -66,7 +66,7 @@ $( "#register_action_button").click(function() {
 function changeGlobalPlaygroundMainColor(newMainColor) {
     //$( "#chat" )
     //$( "#controls" )
-    
+
 }
 
 function changeGlobalPlaygroundDerivativeColor(newDerivativeColor) {
@@ -171,18 +171,20 @@ function loadHeaderMenu() {
 function loadHeader () {
 	var loggedin = false;
 	if (loggedin == false){
-  var headerHTML = `<!-- Header -->
+  var headerHTML = `		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- Header -->
     <header id="header">
       <h1><a href="index.html">KittyUniverse</a></h1>
 
-      <a id="login_button_header" href="login.html"><i class="fa fa-sign-in"></i> Login</a>
+      <a id="login_button_header" href="login.html"><i class="fa fa-sign-in-alt"></i> Login</a>
       <a id="register_button_header" href="signup.html"><i class="fa fa-paw"></i> Create account</a>
 
     <a href="#menu"></a>
     </header>`;
 	}
 	else{
-  var headerHTML = `<!-- Header -->
+  var headerHTML = `		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- Header -->
     <header id="header">
       <h1><a href="index.html">KittyUniverse</a></h1>
 
