@@ -64,7 +64,9 @@ $( "#register_action_button").click(function() {
 });
 
 function changeGlobalPlaygroundMainColor(newMainColor) {
-
+    //$( "#chat" )
+    //$( "#controls" )
+    
 }
 
 function changeGlobalPlaygroundDerivativeColor(newDerivativeColor) {
