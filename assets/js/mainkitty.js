@@ -171,7 +171,8 @@ function loadHeaderMenu() {
 function loadHeader () {
 	var loggedin = false;
 	if (loggedin == false){
-  var headerHTML = `<!-- Header -->
+  var headerHTML = `		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- Header -->
     <header id="header">
       <h1><a href="index.html">KittyUniverse</a></h1>
 
@@ -182,7 +183,8 @@ function loadHeader () {
     </header>`;
 	}
 	else{
-  var headerHTML = `<!-- Header -->
+  var headerHTML = `		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- Header -->
     <header id="header">
       <h1><a href="index.html">KittyUniverse</a></h1>
 
