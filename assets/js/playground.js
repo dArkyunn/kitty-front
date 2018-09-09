@@ -95,7 +95,7 @@ function roundslider(){
     border-color: black;
 }
 #type .rs-bg-color  {
-    background-color: #333333;
+    background-color: #666666;
     opacity:1;
 }
 
