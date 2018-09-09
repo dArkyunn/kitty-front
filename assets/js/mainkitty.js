@@ -136,20 +136,41 @@ function eraseCookie(name) {
 
 
 function loadHeaderMenu() {
+	var loggedin = false;
+	if (loggedin == false){
   var headerMenuHTML = `<!-- Nav -->
     <nav id="menu">
       <ul class="links">
         <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="playgrounds.html"><i class="fa fa-paw"></i> Playgrounds</a></li>
+        <li><a href="elements.html">Configuration</a></li>
+
         <li><a href="elements.html">Elements</a></li>
       </ul>
     </nav>`;
+	}
+	else{
+  var headerMenuHTML = `<!-- Nav -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="playgrounds.html"><i class="fa fa-paw"></i> Playgrounds</a></li>
+        <li><a href="elements.html">Your playgrounds</a></li>
+        <li><a href="elements.html">Your kitties</a></li>
+        <li><a href="elements.html">Configuration</a></li>
+
+
+      </ul>
+    </nav>`;
+	}
 
     document.getElementById("kitty_website_header_menu").innerHTML = headerMenuHTML;
 
 }
 
 function loadHeader () {
+	var loggedin = false;
+	if (loggedin == false){
   var headerHTML = `<!-- Header -->
     <header id="header">
       <h1><a href="index.html">KittyUniverse</a></h1>
@@ -159,6 +180,20 @@ function loadHeader () {
 
     <a href="#menu"></a>
     </header>`;
+	}
+	else{
+  var headerHTML = `<!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">KittyUniverse</a></h1>
+
+      <a id="login_button_header" href="login.html"><i class="fa fa-sign-in"></i> Log out</a>
+      <a id="register_button_header" href="signup.html"><i class="fa fa-paw"></i> Kurko</a>
+
+    <a href="#menu"></a>
+    </header>`;
+
+
+	}
 
     document.getElementById("kitty_website_header").innerHTML = headerHTML;
 

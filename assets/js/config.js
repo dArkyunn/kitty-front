@@ -20,7 +20,7 @@ function active(id) {
 	a[0].className="";
   	document.getElementById(id).className = 'active';
 	if (id == 1){
-	document.getElementById('configuration').innerHTML= "<section class='wrapperconf'><h1>Name</h1><h1>Set profile picture</h1><h1>Description</h1><h1>Public email</h1></section>";	
+	document.getElementById('configuration').innerHTML= "<section class='wrapperconf'><h1>Name</h1><h1>Set profile picture</h1><h1>Description</h1></section>";	
 	document.getElementById('confhead').innerHTML = "Profile";	
 	}
 	if (id == 2){
@@ -28,7 +28,7 @@ function active(id) {
 	document.getElementById('confhead').innerHTML = "General";		
 	}
 	if (id == 3){
-	document.getElementById('configuration').innerHTML= "<section class='wrapperconf'><br></br><input type='checkbox' onchange='checkcheckbox(this)' id='copy' name='copy'><label id='pubemail' for='copy'>Allow my name to be publicly displayed</label></input></section>";	
+	document.getElementById('configuration').innerHTML= "<section class='wrapperconf'><br></br><input type='checkbox' onchange='checkcheckbox(this)' id='copy' name='copy'><label id='pubemail' for='copy'>Allow my name to be publicly displayed</label></input><br></br><input type='checkbox' onchange='checkcheckbox(this)' id='contactme' name='copy'><label id='pubemail' for='copy'>Allow other people to contact me through e-mail</label></input>  </section>";	
 	if (config.publicemail == "y"){
 	document.getElementById("copy").checked = true;
 	}
@@ -48,7 +48,7 @@ function active(id) {
 	document.getElementById('confhead').innerHTML = "Cryptopayments";	
 }
 	if (id == 7){
-	document.getElementById('configuration').innerHTML= "<section class='wrapperconf'><h1>Set page style (night/day)</h1><h1>Disable fancy JavaScript</h1></section>";	
+	document.getElementById('configuration').innerHTML= "<section class='wrapperconf'><h1>Set page style (night/day)</h1> <input type='checkbox' onchange='checkcheckbox(this)' id='contactme' name='copy'><label id='pubemail' for='copy'>Disable fancy JavaScript styles</label></input> </section>";	
 	document.getElementById('confhead').innerHTML = "Style";	
 }
 	if (id == 8){
