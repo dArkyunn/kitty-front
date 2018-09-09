@@ -12,7 +12,9 @@
 	.vertical-menu {
  	  	width: 15%; /* Set a width if you like */
 		height: 50%;
-		background-color: #222222;
+		background-color:rgba(20,20,20, 0.8);
+
+
 	}
 
 	.vertical-menu a {
@@ -22,7 +24,9 @@
     		padding: 13.5px; /* Add some padding */
 		font-size:18px;
     		text-decoration: none; /* Remove underline from links */
-    		background-color: #222222; /* Dark grey background on mouse-over */
+    		background-color:rgba(0,0,0,0);
+
+
 	}
 
 	.vertical-menu a:hover {
@@ -30,8 +34,10 @@
 	}
 
 	.vertical-menu a.active {
-   		 background-color: #1A3C55; /* Add a green color to the "active/current" link */
+   		 background-color: #4A7CC5; /* Add a green color to the "active/current" link */
 	    	 color: white !important;
+		border:1px solid #C3D5E0;
+
 	}
 	.loader {
     border: 16px solid #000022; /* Light grey */
@@ -105,7 +111,7 @@
 	.control {
 	display:inline-block;
 	margin: 0.25% 0.25% 0.25% 0.25%;
-	background-color:rgba(25,25,25, 0.4);
+	background-color:rgb(205,205,205);
 	border-radius:3%;
 	padding: 0.5% 0.5% 0.5% 0.5%;
 	min-height:170px;
@@ -127,7 +133,8 @@
 		box-shadow: 0 0 12px #3ca4ff;
 	}
 	.configuration-head {
-	background-color: #999999;
+	background-color:rgba(70,70,70, 0.5);
+
 	width: 85%;
 	}
 	.configuration-head p {
@@ -148,6 +155,7 @@
 		min-height:100%;
 		z-index:1;
 		color: #c1c7cd;
+		background-color:rgba(20,20,20, 0.5);
 
 	}
 
@@ -168,6 +176,7 @@
 
 	.configuration {
 	width: 85%;
+
 	margin-bottom:6%;
 	overflow-y:auto;
 	}
@@ -175,7 +184,8 @@
 		top:1em;
 		margin-bottom:2em;
 		position:relative;
-    		background-color: #1C3F58; /* Dark grey background on mouse-over */
+    		background-color: #3C6FA8; /* Dark grey background on mouse-over */
+		border:2px solid #B3C5D0;
     		padding: 13.5px; /* Add some padding */
  		color: white !important; /* Black text color */
    		display: block; /* Make the links appear below each other */
@@ -229,6 +239,10 @@
 		vertical-align: baseline;
 		word-wrap: break-word;
 	}
+	p{
+		color:#102530;
+	}
+
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;

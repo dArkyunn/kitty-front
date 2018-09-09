@@ -95,9 +95,14 @@ function roundslider(){
     border-color: black;
 }
 #type .rs-bg-color  {
-    background-color: #666666;
+    background-color: rgb(205,205,205);
     opacity:1;
 }
+#type .rs-tooltip  {
+    color:#102530;
+
+}
+
 
 </style>`
 	$("#controls").append(html);
@@ -132,7 +137,7 @@ function roundquarterslider(){
     border-color: black;
 }
 #type1 .rs-bg-color  {
-    background-color: #333333;
+    background-color: rgb(205,205,205);
     opacity:1;
 }
 #type1  {
@@ -149,6 +154,8 @@ function roundquarterslider(){
 }
 #type1 .rs-tooltip  {
     margin-top:-80px !important;
+    color:#102530;
+
 }
 
 </style>`
