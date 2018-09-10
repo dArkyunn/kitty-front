@@ -34,6 +34,18 @@
 #kitty_profile_image_main {
     max-width: 100%;
 }
+	
+.responsiveDiv {}
+
+@media only screen and (max-width: 768px) {
+	.profileImage {
+		display: block;
+	}
+
+	.responsiveDiv {
+		width: 100%;
+	}
+}
 
 #adoptMeButton:hover {
 	background: #9E1021 !important;
@@ -73,7 +85,7 @@
 
 
 
-								<div class="4u$">
+								<div class="4u$ responsiveDiv">
 									<center>
 										<span style="font-size:40px;font-weight:bold;color:white;">Mruczek</span><br>
 									<img src="images/kitties/kitty_profile_1.jpg" id="kitty_profile_image_main" class="profileImage">
