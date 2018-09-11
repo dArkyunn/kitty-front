@@ -348,6 +348,43 @@ function register(newUserData) {
 }
 
 
+function virtuallyAdoptRequest(kittyID) {
+  showMainLoader();
+  $.ajax({
+      //  headers: {"x-api-key" : "123ABC987XYZ"},
+      url: apiServerAddress + ":" + apiServerPort + "/kitty/:id/adopt/virtual",
+      type: "POST",
+      dataType: "json",
+      data: {
+       newUserData
+      },
+      success: function(response) {
+          if (response.status == "success") {
+              if (response.adoption.is_paid == true) {
+                swal("Udało się!", "Adopcja wirtualna przebiegła pomyślnie! Od teraz stałęś się wirtualnym opiekunem kotka na ", "success").then(function () {
+                    redirectPageToRoute("/yourVirtualAdoptions");
+                });
+              } else {
+                swal("Udało się!", "Adopcja wirtualna została zapisana pomyślnie! Pozostało tylko wpłacić wymaganą kwotę na konto KittyUniverse :)", "success").then(function () {
+                    redirectPageToRoute("/yourVirtualAdoptions");
+                });
+              }
+          } else if (response.status == "error") {
+              swal("Błąd!", "Wystąpił błąd podczas wysyłania żądania! Proszę spróbować pozownie później", "error");
+          } else {
+              swal("Nieoczekiwany wyjątek", "Wystąpił błąd podczas wyświetlania informacji o błędzie!", "error");
+          }
+          hideMainLoader ();
+      },
+      error: (xhr, status, error) => {
+          console.log("Server connection error");
+          swal("Błąd połączenia", "Wystąpił błąd podczas połączenia z serwerem! Proszę spróbować ponownie później.", "error");
+          hideMainLoader();
+      }
+  });
+}
+
+
 
 function loadPage() {
   loadHeader();
