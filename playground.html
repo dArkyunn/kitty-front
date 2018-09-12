@@ -57,7 +57,18 @@
 						width: 100%;
 					}
 				}
+				
+		.kittyContainer {
+			display: flex;
+			flex: 1 0 75%;
+			align-items: center;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
 
+		.kittyContainer img {
+			margin: auto;
+		}
 
 
 
@@ -167,12 +178,12 @@ var history =[];var i=0;var a=0; var nick="kurko";
 
 	<br>
 							<h3>Kitties in playground</h3>
-
+						<div class="kittyContainer">
 							<img src="images/kitties/kitty_profile_1.jpg" style="" class="profileImage kitty_profile_image_playground">
 							<img src="images/kitties/kitty_profile_1.jpg" id="" class="profileImage kitty_profile_image_playground">
 							<img src="images/kitties/kitty_profile_1.jpg" id="" class="profileImage kitty_profile_image_playground">
 							<img src="images/kitties/kitty_profile_1.jpg" id="" class="profileImage kitty_profile_image_playground">
-
+						</div>
 
 											</div>
 				</section>
