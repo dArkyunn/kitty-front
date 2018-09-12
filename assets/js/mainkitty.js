@@ -7,11 +7,13 @@ var currentPlayground = "";
 var socketConnected = false;
 var addressBase = "";
 
-var socket = io('http://'+socketIOAddress+':'+socketIOPort);
+$(document).ready(function() {
+    var socket = io('http://'+socketIOAddress+':'+socketIOPort);
 
-socket.on('connect', function() {
-    console.log("Connected to main C&C server");
-    changeSocketConnectionIndicator(true);
+    socket.on('connect', function() {
+        console.log("Connected to main C&C server");
+        changeSocketConnectionIndicator(true);
+    });
 });
 
 function changeSocketConnectionIndicator(isConnected) {
@@ -141,6 +143,7 @@ function loadHeaderMenu() {
   var headerMenuHTML = `<!-- Nav -->
     <nav id="menu">
       <ul class="links">
+          <li>  <a id="login_button_header" href="login.html"><i class="fa fa-sign-in-alt"></i> Login</a></li>
         <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="playgrounds.html"><i class="fa fa-paw"></i> Playgrounds</a></li>
         <li><a href="elements.html">Configuration</a></li>
@@ -149,6 +152,7 @@ function loadHeaderMenu() {
       </ul>
     </nav>`;
 	}
+  //document.getElementsByTagName('nav')[0];
 	else{
   var headerMenuHTML = `<!-- Nav -->
     <nav id="menu">
@@ -158,6 +162,7 @@ function loadHeaderMenu() {
         <li><a href="elements.html">Your playgrounds</a></li>
         <li><a href="elements.html">Your kitties</a></li>
         <li><a href="elements.html">Configuration</a></li>
+          <a id="logout_button"><i class="fa fa-sign-in"></i> Log out</a>
 
 
       </ul>
@@ -176,8 +181,8 @@ function loadHeader () {
     <header id="header">
       <h1><a href="index.html">KittyUniverse</a></h1>
 
-      <a id="login_button_header" href="login.html"><i class="fa fa-sign-in-alt"></i> Login</a>
-      <a id="register_button_header" href="signup.html"><i class="fa fa-paw"></i> Create account</a>
+
+      <a id="register_button_header" class="button small" style="background:#ff0547;font-size:14px;font-weight:900;" href="signup.html"><i class="fa fa-paw"></i> Join</a>
 
     <a href="#menu"></a>
     </header>`;
@@ -188,8 +193,8 @@ function loadHeader () {
     <header id="header">
       <h1><a href="index.html">KittyUniverse</a></h1>
 
-      <a id="login_button_header" href="login.html"><i class="fa fa-sign-in"></i> Log out</a>
-      <a id="register_button_header" href="signup.html"><i class="fa fa-paw"></i> Kurko</a>
+
+      <a id="account_dashboard_button_header" href="accountDashboard.html"><i class="fa fa-paw"></i> Kurko</a>
 
     <a href="#menu"></a>
     </header>`;

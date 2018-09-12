@@ -4164,3 +4164,8 @@
 				padding: 3em 0 1em 0;
 			}
 		}
+
+
+		.swal-button-container-custom {
+				width:100$;
+		}
