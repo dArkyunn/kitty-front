@@ -4169,3 +4169,30 @@
 		.swal-button-container-custom {
 				width:100$;
 		}
+
+		#register_button_header:hover {
+			background: #ce001e !important;
+		}
+
+		.instagram_button {
+			background: #d6249f;
+		  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+			border: none;
+			color: white !important;
+		}
+
+		.facebook_button {
+				background:#3b5998 !important;
+				color:white !important;
+		}
+
+		.snapchat_button {
+				background: #fffc00 !important;
+				border: 1px solid #fffc00 !important;
+				color: black !important;
+		}
+
+	.facebook_button:hover {
+		background:#2f6ae0 !important;
+		color: white !important;
+	}
